@@ -1,0 +1,74 @@
+// Basic awake-asleep
+let working: boolean = true
+
+input.onButtonPressed(Button.A, function () {
+    working = false
+})
+
+input.onButtonPressed(Button.B, function () {
+    working = true
+})
+
+basic.forever(function () {
+    if (working) {
+        basic.showString("Awake")
+    } else {
+        basic.showString("Zzzzz")
+    }
+})
+
+// Random Number Gen Screensaver Start
+if (!working) {
+    input.onGesture(Gesture.Shake, function () {
+        basic.forever(function () {
+            basic.showNumber(Math.randomRange(1, 9))
+            basic.pause(1000)
+        })
+    })
+}
+// Random Number Gen Screensaver End
+
+//Firework Screensaver Start
+if (!working) {
+    input.onGesture(Gesture.TiltLeft, function () {
+        basic.forever(function () {
+            let x = Math.randomRange(0, 4)
+            led.plot(x, 4)
+            basic.pause(500)
+            led.plot(x, 3)
+            basic.pause(500)
+            led.unplot(x, 4)
+            led.plot(x, 2)
+            basic.pause(500)
+            led.unplot(x, 3)
+            led.unplot(x, 2)
+            led.plot(x - 1, 2)
+            led.plot(x, 3)
+            led.plot(x + 1, 2)
+            led.plot(x, 1)
+            basic.pause(500)
+            led.unplot(x - 1, 2)
+            led.unplot(x, 3)
+            led.unplot(x + 1, 2)
+            led.unplot(x, 1)
+            led.plot(x - 2, 2)
+            led.plot(x, 4)
+            led.plot(x + 2, 2)
+            led.plot(x, 0)
+            led.plot(x - 1, 1)
+            led.plot(x - 1, 3)
+            led.plot(x + 1, 1)
+            led.plot(x + 1, 3)
+            basic.pause(500)
+            led.unplot(x - 2, 2)
+            led.unplot(x, 4)
+            led.unplot(x + 2, 2)
+            led.unplot(x, 0)
+            led.unplot(x - 1, 1)
+            led.unplot(x - 1, 3)
+            led.unplot(x + 1, 1)
+            led.unplot(x + 1, 3)
+        })
+    })
+}
+// Firework Streensaver End
