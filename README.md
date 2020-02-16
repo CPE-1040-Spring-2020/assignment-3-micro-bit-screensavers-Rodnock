@@ -124,7 +124,11 @@ This assignnment is more involved than the first two, but uses the same basic mi
 
 ## Screensavers
 
-_TODO: Add your screensaver descriptions!!!_
+1. A firework that generates at a random (x, 0) coordinate.
+2. Display a random number generated every second.
+3. Flash LEDs that travel in a circle and in a line through the middle of the microbit.
+4. Rain that falls at a 45 degree angle with various speed and brightness.
+5. A spiral on the LED screen that plots and unplots LEDs
 
 ## Demo video
 
